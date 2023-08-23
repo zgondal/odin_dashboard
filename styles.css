@@ -64,12 +64,12 @@ ul li img {
 .header {
     grid-area: header;
     display: grid;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* justify-content: space-around; */
     font-size: 18px;
-    gap: 32px;
+    gap: 16px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-right: 32px;
     padding-left: 16px;
     background-color: var(--header-bg);
@@ -83,9 +83,14 @@ ul li img {
     padding-top: 12px;
 }
 
+.header .top .profile {
+    min-width: fit-content;
+}
+
 .header img {
     -webkit-filter: invert(0%); /* safari 6.0 - 9.0 */
             filter: invert(00%);
+    height: 64px
 }
 
 .header .top img {
@@ -109,8 +114,17 @@ input[type="search"] {
 .header .bottom {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 12px;
-    padding: 18px 8px;
+    padding: 18px 8px 4px 8px;
+}
+
+.header > .bottom > .greeting > h4 {
+    margin: 0 0 12px 0;
+} 
+
+.header > .bottom > .greeting > p {
+    margin: 0 0 4px 0;
 }
 
 .bottom > .greeting {
@@ -127,6 +141,7 @@ input[type="search"] {
     width: 80px;
     height: 32px;
     font-weight: 700;
+    align-self: center;
 }
 
 .bottom button:hover {
@@ -137,15 +152,16 @@ input[type="search"] {
 
 .main {
     grid-area: main;
-    display: flex;
-    padding: 24px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 24px 24px 12px 24px;
     background-color: var(--main-bg);
     font-size: 14px;
     gap: 15px;
 }
 
 .main .left {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     max-height: 95vh;
     overflow: auto;
@@ -153,8 +169,9 @@ input[type="search"] {
 }
 
 .main .right {
-    flex-grow: 1;
-    flex-basis:;
+    overflow: auto;
+    display: grid;
+    height: 95vh
 }
 
 
@@ -178,15 +195,39 @@ article > p, article > h4 {
 
 .main .right .announcements {
     background-color: var(--article-bg);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 4px 12px; 
 }
 
 .announcements > p, .announcements > h5 {
     color: #07127c;
+    max-width: 250px;
+}
+
+.announcements > h5 {
+    padding: 0px 0px;
+    margin: 0;
+}
+
+.announcements > h5:first-child {
+    margin-top: 12px;
 }
 
 .announcements > p {
     border-bottom: 1px solid #07127c;
     padding-bottom: 12px;
+}
+
+.announcements > p:last-child {
+    border-bottom: none;
+}
+
+.main .right .trending {
+    background-color: var(--article-bg);
+    border-radius: 8px;
+    padding: 4px 12px; 
+}
+
+.trending > p {
+    color: #07127c;
 }
